@@ -1,0 +1,30 @@
+<ion-header-bar class="bar-positive">
+    <h1 class="title">Simple Form</h1>
+</ion-header-bar>
+<ion-content class="has-header padding">
+    <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Email</span>
+            <input type="text" ng-model="user.email" placeholder="john.doe@domain.com">>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Forename</span>
+            <input type="text" ng-model="user.first_name" placeholder="John">>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Surname</span>
+            <input type="text" ng-model="user.last_name" placeholder="Doe">>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Age</span>
+            <ion-item class="range range-positive">
+                <input type="range" min="15" max="80" ng-model="user.age">
+            </ion-item> {{user.age}}
+        </label>
+        <label class="item item-input">
+            <button class="button button-block button-positive" ng-click="createUser()">
+                Contribute!
+            </button>
+        </label>
+    </div>
+</ion-content>
