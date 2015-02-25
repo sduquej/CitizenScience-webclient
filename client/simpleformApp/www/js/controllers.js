@@ -7,7 +7,8 @@ angular.module('simpleForm.controllers',['simpleForm.services'])
             email: "",
             first_name: "",
             last_name: "",
-            age: 18
+            age: 18,
+            gender: ""
         };
 
         $scope.createUser = function(){
@@ -15,6 +16,7 @@ angular.module('simpleForm.controllers',['simpleForm.services'])
             var fname = this.user.first_name;
             var lname = this.user.last_name;
             var age = this.user.age;
+            var gender = this.user.gender || "U";
             if(!email || !fname || !lname || !age){
                 alert("Missing data, please enter valid inputs");
                 $rootScope.notify("Missing data, please enter valid inputs");
@@ -26,7 +28,8 @@ angular.module('simpleForm.controllers',['simpleForm.services'])
                 email: email,
                 first_name: fname,
                 last_name: lname,
-                age: age
+                age: age,
+                gender: gender
             }).success(function (data){
                 alert("Data collected :D");
                 $rootScope.hide();

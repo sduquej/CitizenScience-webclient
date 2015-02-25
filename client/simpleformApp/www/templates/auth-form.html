@@ -21,6 +21,16 @@
                 <input type="range" min="15" max="80" ng-model="user.age">
             </ion-item> {{user.age}}
         </label>
+        <label class="item item-input item-select">
+            <span class="input-label">
+                Gender
+            </span>
+            <select ng-model="user.gender">
+                <option value="" ></option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </label>
         <label class="item item-input">
             <button class="button button-block button-positive" ng-click="createUser()">
                 Contribute!
