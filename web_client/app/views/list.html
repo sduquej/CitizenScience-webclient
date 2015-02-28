@@ -1,0 +1,13 @@
+<h3>Current contributions</h3>
+<p>Here goes the list.</p>
+
+<table class="table table-striped table-responsive table-hover">
+  <thead>
+    <tr>
+      <th ng-repeat="key in vm.keys">{{key}}</th>
+    </tr>
+  </thead>
+  <tr ng-repeat="contribution in vm.contributions">
+    <td ng-repeat="key in vm.keys">{{contribution[key]}}</td>
+  </tr>
+</table>
