@@ -63,6 +63,22 @@ module.exports = function (grunt) {
       }
     },
 
+    // build control
+    buildcontrol: {
+      options: {
+          dir: 'dist',
+          commit: true,
+          push: true,
+          message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      heroku: {
+          options: {
+              remote: 'git@heroku.com:formly-web-app.git',
+              branch: 'master'
+          }
+      }
+   },
+
     // The actual grunt server settings
     connect: {
       options: {
@@ -140,14 +156,18 @@ module.exports = function (grunt) {
         files: [{
           dot: true,
           src: [
-            '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*'
-          ]
-        }]
-      },
-      server: '.tmp'
+          '.tmp',
+          '<%= yeoman.dist %>/*',
+        '!<%= yeoman.dist %>/.git{,*/}*',
+        '!<%= yeoman.dist %>/Procfile',
+        '!<%= yeoman.dist %>/package.json',
+        '!<%= yeoman.dist %>/web.js',
+        '!<%= yeoman.dist %>/node_modules'
+        ]
+      }]
     },
+    server: '.tmp'
+  },
 
     // Add vendor prefixed styles
     autoprefixer: {
@@ -389,7 +409,6 @@ module.exports = function (grunt) {
     }
   });
 
-
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -409,7 +428,7 @@ module.exports = function (grunt) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
   });
-
+  grunt.registerTask('deploy', ['buildcontrol']);
   grunt.registerTask('test', [
     'clean:server',
     'wiredep',
