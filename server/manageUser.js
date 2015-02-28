@@ -9,6 +9,16 @@ module.exports = function (server, db){
         unique: true
     });
 
+server.get("/api/v1/simpleForm/list", function (req, res, next) {
+          db.appUsers.find({},{_id:0},function (err, list) {
+              res.writeHead(200, {
+                  'Content-Type': 'application/json; charset=utf-8'
+              });
+              res.end(JSON.stringify(list));
+          });
+      return next();
+    });
+
     server.post('api/v1/simpleForm/register', function(req, res, next){
         var user = req.params;
         console.log("User >> "+ JSON.stringify(user));
