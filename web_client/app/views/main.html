@@ -1,12 +1,11 @@
 <div class="jumbotron">
   <h1>Form created from JSON</h1>
 
-  <form name="form" ng-submit="vm.onSubmit()" novalidate>
-    <formly-form  model="vm.formData" fields="vm.formFields">
+  <form name="vm.form" ng-submit="vm.onSubmit()" novalidate>
+    <formly-form  model="vm.formData" fields="vm.formConfig.jsonConfig">
       <button type="submit" class="btn btn-lg btn-success">Contribute!</button>
       <button type="button" ng-click="vm.resetForm(form)" class="btn btn-lg btn-danger">Reset!</button>
     </formly-form>
-      <span id='errorNotice' class="alert" ng-show="vm.notice">{{vm.notice}}</span>
   </form>
 </div>
 
@@ -14,4 +13,4 @@
 <pre>{{vm.formData | json}}</pre>
 
 <h3>Input JSON</h3>
-<pre>{{vm.formFields | json}}</pre>
+<pre>{{::vm.formConfig.jsonConfig | json}}</pre>

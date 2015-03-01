@@ -1,5 +1,6 @@
+"use strict";
 angular.module('webClientApp')
-  .factory('API', function($http) {
+  .factory('restAPI', function($http) {
     var base = "https://floating-island-8148.herokuapp.com/";
 
     return {

@@ -4,10 +4,10 @@
 <table class="table table-striped table-responsive table-hover">
   <thead>
     <tr>
-      <th ng-repeat="key in vm.keys">{{key}}</th>
+      <th ng-repeat="key in vm.formConfig.formFields">{{key}}</th>
     </tr>
   </thead>
   <tr ng-repeat="contribution in vm.contributions">
-    <td ng-repeat="key in vm.keys">{{contribution[key]}}</td>
+    <td ng-repeat="key in vm.formConfig.formFields">{{contribution[key]}}</td>
   </tr>
 </table>

@@ -8,14 +8,14 @@
  * Controller of the webClientApp
  */
 angular.module('webClientApp')
-  .controller('ListController', ['API','$scope', function (API,$scope) {
-    console.log(API);
+  .controller('ListController', ['restAPI','formConfig', function (restAPI,formConfig) {
+    this.formConfig = formConfig;
     var that = this;
-    API.list().success(function (data, status, headers, config) {
-      console.log('woo!');
+    restAPI.list().success(function (data, status, headers, config) {
+      console.log('woo! query success');
       that.contributions = data;
     }).error(function (data, status, headers, config) {
-      console.log('SHITE!');
+      console.log('SHITE! query fail');
       that.contributions = [
         {
           email: 'dummy Email',
@@ -33,10 +33,7 @@ angular.module('webClientApp')
         }
       ];
     }).finally(function(){
-      console.log('f');
-      that.keys = Object.keys(that.contributions[0]);
+      that.keys = Object.keys(that.contributions[8]);
     });
 
-
-    console.log(this);
   }]);
