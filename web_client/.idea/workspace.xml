@@ -34,11 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5042017" vertical-offset="0" max-vertical-offset="2640">
-              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+            <state vertical-scroll-proportion="-11.851851" vertical-offset="40" max-vertical-offset="2640">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33277312" vertical-offset="2882" max-vertical-offset="9400">
+              <caret line="154" column="8" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -49,16 +59,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-35.384617" vertical-offset="0" max-vertical-offset="1560">
               <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.769231" vertical-offset="0" max-vertical-offset="400">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,7 +137,6 @@
         <option value="$PROJECT_DIR$/dist/package.json" />
         <option value="$PROJECT_DIR$/dist/web.js" />
         <option value="$PROJECT_DIR$/dist/Procfile" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/restAPI.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/jsonConfig.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
@@ -146,6 +145,7 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/list.js" />
         <option value="$PROJECT_DIR$/app/views/list.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/main.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -475,44 +475,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="140">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/web.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61538464" vertical-offset="0" max-vertical-offset="390">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.6483517" vertical-offset="0" max-vertical-offset="1540">
           <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4986226" vertical-offset="6459" max-vertical-offset="9380">
-          <caret line="332" column="29" selection-start-line="332" selection-start-column="29" selection-end-line="332" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -589,10 +555,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="140">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/web.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3858521" vertical-offset="0" max-vertical-offset="622">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5042017" vertical-offset="0" max-vertical-offset="2640">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        <state vertical-scroll-proportion="-11.851851" vertical-offset="40" max-vertical-offset="2640">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33277312" vertical-offset="2882" max-vertical-offset="9400">
+          <caret line="154" column="8" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="8" />
           <folding />
         </state>
       </provider>

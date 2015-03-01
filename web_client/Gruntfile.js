@@ -73,6 +73,7 @@ module.exports = function (grunt) {
       },
       heroku: {
           options: {
+              force: true,
               remote: 'git@heroku.com:formly-web-app.git',
               branch: 'master'
           }
