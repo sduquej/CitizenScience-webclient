@@ -1,6 +1,15 @@
 [
   {
-
+    "key": "exp",
+    "type": "textarea",
+    "templateOptions": {
+      "label": "Experience",
+      "placeholder": "Please tell us more about your experience...",
+      "required": true,
+      "options": []
+    }
+  },
+  {
     "key": "email",
     "type": "input",
     "templateOptions": {
