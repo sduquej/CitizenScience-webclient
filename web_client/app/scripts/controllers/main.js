@@ -86,38 +86,36 @@ angular.module('webClientApp')
     //];
 
     var clearElement = function(element, index, array){
-      that.formData[element] = '';
+      that.formData[element] = undefined;
     };
 
     function resetForm(form) {
-        if (form) {
-          form.$setPristine();
-          form.$setUntouched();
-        }
-        that.formConfig.formFields.forEach(clearElement, this);
-      };
+      that.formConfig.formFields.forEach(clearElement, this);
+      if (form) {
+        form.$setPristine();
+        form.$setUntouched();
+      }
+    };
 
     function onSubmit() {
       console.log('form submitted:', this.formData);
 
       restAPI.form({
+        files: this.formData.file || [],
         email: this.formData.email || '',
         fname: this.formData.fname || '',
         lname: this.formData.lname || '',
         dob: this.formData.dob ? $filter('date')(new Date(this.formData.dob), 'yyyy/MM/dd') : '',
         age: this.formData.age || '',
-        gender: this.formData.gender || ''
-      }).success(function (data){
-        alert("Data collected :D");
+        gender: this.formData.gender || '',
+        timestamp: (new Date()).toJSON()
+      }).success(function (data, status, headers, config) {
         console.log(data);
+        alert("Data collected :D");
         resetForm(that.form);
       }).error(function (error) {
-        if(error.error && error.error.code == 11000){
-          alert("Duplicated email");
-        } else {
-          alert("Oops!");
-          console.log("ERROR >"+error.error);
-        }
+        alert("Something unexpected happened");
+        console.log("ERROR :\n"+error.error);
       });
     };
   }])

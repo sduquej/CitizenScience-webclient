@@ -2,38 +2,38 @@
 
 /**
  * @ngdoc function
- * @name webClientApp.controller:ListController
+ * @name webClientApp.controller:StatsController
  * @description
- * # AboutCtrl
- * Controller of the webClientApp
+ * # StatsController
+ * Statistics Controller
  */
-angular.module('webClientApp')
-  .controller('ListController', ['restAPI','formConfig', function (restAPI,formConfig) {
-    this.formConfig = formConfig;
-    var that = this;
-    restAPI.list().success(function (data, status, headers, config) {
-      console.log('woo! query success');
-      that.contributions = data;
-    }).error(function (data, status, headers, config) {
-      console.log('SHITE! query fail');
-      that.contributions = [
-        {
-          email: 'dummy Email',
-          first_name: 'dummy Name',
-          last_name: 'dummy LastName',
-          age: '25',
-          gender: 'M'
-        },
-        {
-          email: 'dummy Email 2',
-          first_name: 'dummy Name',
-          last_name: 'dummy LastName',
-          age: '20',
-          gender: 'F'
-        }
-      ];
-    }).finally(function(){
-      that.keys = Object.keys(that.contributions[8]);
+angular
+  .module('webClientApp')
+  .controller('ListController', listController)
+
+listController.$inject = ['restAPI','formConfig'];
+
+function listController(restAPI,formConfig) {
+  var vm = this;
+  vm.formConfig = formConfig;
+
+  loadData();
+
+  function loadData(){
+    // Set the keys
+    return getData().then(function () {
+      // TODO: Make this something useful
+      //vm.keys = Object.keys(vm.contributions[8]);
+      console.log('data loaded');
     });
 
-  }]);
+    // Get the contributions list
+    function getData(){
+      return restAPI.list()
+        .then(function(data){
+          vm.contributions = data;
+          return vm.contributions;
+        });
+    }
+  }
+};

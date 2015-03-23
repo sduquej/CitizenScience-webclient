@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'formly',
-    'formlyBootstrap'
+    'formlyBootstrap',
+    'angularFileUpload'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -31,6 +32,10 @@ angular
       })
       .when('/links', {
         templateUrl: 'views/links.html'
+      })
+      .when('/upload', {
+        templateUrl: 'views/fileUpload.html'
+        //controller: 'UploadController as vm'
       })
       .otherwise({
         redirectTo: '/'

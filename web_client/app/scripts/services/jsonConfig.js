@@ -1,6 +1,7 @@
 /**
  * Created by sduquej on 28/02/2015.
  */
+'use strict';
 angular.module('webClientApp')
 .factory('formConfig', function($http,$q) {
     var fileLocation = "data/form_fields.json";

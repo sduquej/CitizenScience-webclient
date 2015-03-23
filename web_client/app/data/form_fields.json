@@ -1,10 +1,9 @@
 [
   {
-    "key": "exp",
-    "type": "textarea",
+    "key": "file",
+    "type": "fileField",
     "templateOptions": {
-      "label": "Experience",
-      "placeholder": "Please tell us more about your experience...",
+      "label": "Upload something",
       "required": true,
       "options": []
     }
