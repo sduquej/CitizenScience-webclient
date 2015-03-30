@@ -1,9 +1,17 @@
+<div class="input-group">
+  <input class="form-control" type="text" placeholder="Coordinates" ng-model="vm.location"/>
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button" ng-click="vm.setLocation()">
+      <i class="glyphicon glyphicon-map-marker"></i>
+    </button>
+  </span>
+</div>
 <div class="jumbotron">
-  <h1>Form created from JSON</h1>
+  <h2>Mammal observation form</h2>
 
-  <form name="vm.form" ng-submit="vm.onSubmit()" novalidate>
+  <form name="vm.form" ng-submit="vm.onSubmit()">
     <formly-form  model="vm.formData" fields="vm.formConfig.jsonConfig">
-      <button type="submit" class="btn btn-lg btn-success">Contribute!</button>
+      <button type="submit" class="btn btn-lg btn-success" ng-disabled="vm.form.$invalid">Contribute!</button>
       <button type="button" ng-click="vm.resetForm(vm.form)" class="btn btn-lg btn-danger">Reset!</button>
     </formly-form>
   </form>

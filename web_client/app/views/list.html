@@ -1,13 +1,39 @@
-<h3>Current contributions</h3>
-<p>Here goes the list.</p>
+<h3>Some statistics</h3>
 
-<table class="table table-striped table-responsive table-hover">
-  <thead>
-    <tr>
-      <th ng-repeat="key in vm.formConfig.formFields">{{key}}</th>
-    </tr>
-  </thead>
-  <tr ng-repeat="contribution in vm.contributions">
-    <td ng-repeat="key in vm.formConfig.formFields">{{contribution[key]}}</td>
-  </tr>
-</table>
+  <div class="row">
+    <h4 class="col-xs-4"> <small>Total number of contributions</small></h4>
+    <h4 class="col-xs-8"> {{vm.contributions.length}}</h4>
+  </div>
+
+  <div class="row">
+    <h4 class="col-xs-4"> <small>Contributions in the last month</small></h4>
+    <h4 class="col-xs-8"> {{vm.lastContributions.length}}</h4>
+  </div>
+
+  <div class="row" ng-if="vm.contributions.length">
+    <h4 class="col-xs-4"> <small>Last contribution was</small></h4>
+    <h4 class="col-xs-8" am-time-ago="vm.contributions[0].timestamp"></h4>
+  </div>
+
+  <div class="row" ng-if="!vm.contributions.length">
+    <h4 class="col-xs-4"> <small>There are no contributions yet</small></h4>
+    <h4 class="col-xs-8"><a href="/#/">Be the first!</a></h4>
+</div>
+
+<div ng-if="vm.contributions.length">
+  <hr />
+  <h3>Latest contributions</h3>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th ng-repeat="key in vm.formConfig.formFields">{{key}}</th>
+      </tr>
+      </thead>
+      <tr ng-repeat="contribution in vm.lastTenContributions">
+        <td ng-repeat="key in vm.formConfig.formFields">{{contribution[key]}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

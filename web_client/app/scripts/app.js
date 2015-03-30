@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'formly',
     'formlyBootstrap',
-    'angularFileUpload'
+    'angularFileUpload',
+    'angularMoment'
   ])
   .config(function ($routeProvider) {
     $routeProvider

@@ -8,7 +8,7 @@ restAPI.$inject =['$http', '$upload'];
 function restAPI($http, $upload) {
     // local
     // when testing from an external device, change the url to the intranet ip
-    var base = 'http://localhost:9804';
+    var base = 'http://149.157.105.16:9804';
     //remote
     //var base = "https://floating-island-8148.herokuapp.com/";
 
@@ -47,11 +47,12 @@ function restAPI($http, $upload) {
       method: 'POST',
       fields: form,
       //data: form, // data, // Any data needed to be submitted along with the files
-      file: form.files
-      //fileName: form.timestamp + '_' + form.files[0].name
+      file: form.files || []
     }).progress(function (evt) {
-      var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-      console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+      // Update the uploaded percentage to show on the progress bar
+      if(form.files.length){
+        form.files[0].progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+      }
     });
   }
 
