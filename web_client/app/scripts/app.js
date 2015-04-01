@@ -34,10 +34,6 @@ angular
       .when('/links', {
         templateUrl: 'views/links.html'
       })
-      .when('/upload', {
-        templateUrl: 'views/fileUpload.html'
-        //controller: 'UploadController as vm'
-      })
       .otherwise({
         redirectTo: '/'
       });

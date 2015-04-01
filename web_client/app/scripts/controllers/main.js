@@ -10,25 +10,12 @@
 angular.module('webClientApp')
   .controller('MainController', ['restAPI','formConfig','$scope', function (restAPI,formConfig,$scope) {
     var keys = [],
-      vm = this,
-      userLocation;
+      vm = this;
+
     vm.onSubmit = onSubmit;
     vm.formData = {};
     vm.formConfig = formConfig;
     vm.resetForm = resetForm;
-    vm.setLocation = setLocation;
-
-    //function getLocation() {
-      navigator.geolocation.getCurrentPosition(function (p) {
-        userLocation = p.coords.latitude+', '+ p.coords.longitude;
-        //$scope.$apply();
-      });
-    //};
-
-    function setLocation() {
-      vm.location = userLocation;
-      //$scope.$apply();
-    };
 
     var clearElement = function(element){
       vm.formData[element] = undefined;

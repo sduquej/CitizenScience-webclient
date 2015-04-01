@@ -8,32 +8,14 @@ restAPI.$inject =['$http', '$upload'];
 function restAPI($http, $upload) {
     // local
     // when testing from an external device, change the url to the intranet ip
-    var base = 'http://149.157.105.16:9804';
+    //var base = 'http://149.157.105.16:9804';
     //remote
     //var base = "https://floating-island-8148.herokuapp.com/";
+    var base = "https://citscimurestapi.herokuapp.com/";
 
-    return {
+  return {
       form: submitForm,
-      list: listContributions,
-
-      //TODO: remove if it's not going to be used
-      uploadFile: function (files) {
-        if(files && files.length) {
-          console.log(files);
-          $upload.upload({
-            url: base + '/api/v1/simpleForm/upload',
-            method: 'POST',
-            data: {}, // data, // Any data needed to be submitted along with the files
-            file: files
-          }).progress(function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-          }).success(function (data, status, headers, config) {
-            console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-            return 'Success!';
-          });
-        }
-      }
+      list: listContributions
     };
 
   ////////////////////////////////////
@@ -43,7 +25,7 @@ function restAPI($http, $upload) {
     //return $http.post(base + '/api/v1/simpleForm/register', form);
     //  Multiform attempt
     return $upload.upload({
-      url: base + '/api/v1/simpleForm/register',
+      url: base + '/api/v1/contributions/register',
       method: 'POST',
       fields: form,
       //data: form, // data, // Any data needed to be submitted along with the files
@@ -57,7 +39,7 @@ function restAPI($http, $upload) {
   }
 
   function listContributions() {
-    return $http.get(base + '/api/v1/simpleForm/list')
+    return $http.get(base + '/api/v1/contributions/list')
       .then(listContributionsComplete)
       .catch(listContributionsFailed);
   }

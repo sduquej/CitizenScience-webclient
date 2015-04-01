@@ -1,192 +1,56 @@
 [
   {
-    "key": "location_name",
+    "key": "name",
     "type": "input",
     "templateOptions": {
-      "required": false,
-      "label": "Location name",
+      "required": true,
+      "label": "Name of Observer",
       "description": "",
-      "placeholder": "",
+      "placeholder": "Who made the observation?",
       "options": []
     }
   },
   {
-    "key": "county",
-    "type": "select",
+    "key": "type",
+    "type": "radio",
     "templateOptions": {
-      "label": "County",
-      "description": "",
+      "label": "Category",
+      "description": "Which fits best your observation?",
       "required": false,
       "options": [
         {
-          "name": "Antrim",
-          "value": "Antrim"
+          "name": "Singing Birds",
+          "value": "SB"
         },
         {
-          "name": "Armagh",
-          "value": "Armagh"
+          "name": "Flying Birds",
+          "value": "FB"
         },
         {
-          "name": "Carlow",
-          "value": "Carlow"
+          "name": "Flower/Plants",
+          "value": "FP"
         },
         {
-          "name": "Cavan",
-          "value": "Cavan"
+          "name": "Insects/Arachnids",
+          "value": "IA"
         },
         {
-          "name": "Clare",
-          "value": "Clare"
+          "name": "Environment (Mud, Smell, Other...)",
+          "value": "E"
         },
         {
-          "name": "Cork",
-          "value": "Cork"
-        },
-        {
-          "name": "Derry",
-          "value": "Derry"
-        },
-        {
-          "name": "Donegal",
-          "value": "Donegal"
-        },
-        {
-          "name": "Down",
-          "value": "Down"
-        },
-        {
-          "name": "Dublin",
-          "value": "Dublin"
-        },
-        {
-          "name": "Fermanagh",
-          "value": "Fermanagh"
-        },
-        {
-          "name": "Galway",
-          "value": "Galway"
-        },
-        {
-          "name": "Kerry",
-          "value": "Kerry"
-        },
-        {
-          "name": "Kildare",
-          "value": "Kildare"
-        },
-        {
-          "name": "Kilkenny",
-          "value": "Kilkenny"
-        },
-        {
-          "name": "Laois",
-          "value": "Laois"
-        },
-        {
-          "name": "Leitrim",
-          "value": "Leitrim"
-        },
-        {
-          "name": "Limerick",
-          "value": "Limerick"
-        },
-        {
-          "name": "Longford",
-          "value": "Longford"
-        },
-        {
-          "name": "Louth",
-          "value": "Louth"
-        },
-        {
-          "name": "Mayo",
-          "value": "Mayo"
-        },
-        {
-          "name": "Meath",
-          "value": "Meath"
-        },
-        {
-          "name": "Monaghan",
-          "value": "Monaghan"
-        },
-        {
-          "name": "Offaly",
-          "value": "Offaly"
-        },
-        {
-          "name": "Roscommon",
-          "value": "Roscommon"
-        },
-        {
-          "name": "Sligo",
-          "value": "Sligo"
-        },
-        {
-          "name": "Tipperary",
-          "value": "Tipperary"
-        },
-        {
-          "name": "Tyrone",
-          "value": "Tyrone"
-        },
-        {
-          "name": "Waterford",
-          "value": "Waterford"
-        },
-        {
-          "name": "Westmeath",
-          "value": "Westmeath"
-        },
-        {
-          "name": "Wexford",
-          "value": "Wexford"
-        },
-        {
-          "name": "Wicklow",
-          "value": "Wicklow"
+          "name": "None of the above",
+          "value": "N"
         }
       ]
     }
   },
   {
-    "key": "observer_name",
-    "type": "input",
-    "templateOptions": {
-      "type": "text",
-      "label": "Name of observer",
-      "placeholder": "Who made the observation?",
-      "required": false,
-      "options": []
-    }
-  },
-  {
-    "key": "email",
-    "type": "input",
-    "templateOptions": {
-      "type": "email",
-      "label": "Email",
-      "placeholder": "",
-      "required": false,
-      "options": []
-    }
-  },
-  {
-    "key": "observation_date",
-    "type": "input",
-    "templateOptions": {
-      "type": "date",
-      "label": "Date of Observation",
-      "min":"2005-01-01",
-      "required": false
-    }
-  },
-  {
-    "key": "comment",
+    "key": "remarks",
     "type": "textarea",
     "templateOptions": {
-      "label": "Comment",
-      "placeholder": "Any further details?",
+      "label": "Remarks",
+      "placeholder": "Feel free to add any comments",
       "description": "",
       "required": false,
       "options": []
@@ -200,39 +64,6 @@
       "required": false,
       "description": "",
       "options": []
-    }
-  },
-  {
-    "key": "observation_type",
-    "type": "select",
-    "templateOptions": {
-      "label": "Observation type",
-      "options": [
-        {
-          "name": "Live animal",
-          "value": "LA"
-        },
-        {
-          "name": "Road Kill",
-          "value": "RK"
-        },
-        {
-          "name": "Shot",
-          "value": "S"
-        },
-        {
-          "name": "Trapped",
-          "value": "T"
-        },
-        {
-          "name": "Cat prey",
-          "value": "CP!"
-        },
-        {
-          "name": "Found dead (Not road kill)",
-          "value": "FD"
-        }
-      ]
     }
   }
 ]
