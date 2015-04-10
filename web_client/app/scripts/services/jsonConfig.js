@@ -3,28 +3,16 @@
  */
 'use strict';
 angular.module('webClientApp')
-.factory('formConfig', function($http,$q) {
-    var fileLocation = "data/form_fields.json";
-    var formParameters = {
-      //formFields: [],
-      //jsonConfig: []
-    };
+.factory('formConfig', function($http) {
+    var fileLocation = 'data/form_fields.json';
+    var formParameters = {};
 
-    $http.get(fileLocation,{"cache":true}).success(function(data){
-      console.log("data read:\n",data);
+    // Loads form fields configuration from json file and exposes it
+    $http.get(fileLocation, { 'cache': true }).success(function(data){
       formParameters.jsonConfig = data;
-      formParameters.formFields = data.map(function(object){ return object['key']; });
+      // Array with fields' unique id in db
+      formParameters.formFields = data.map(function(object){ return object.key; });
     });
 
     return formParameters;
-    //var get = function() {
-    //  return $http.get(fileLocation,{"cache":true});
-    //};
-    //
-    //return {
-    //  listFormFields: function () {
-    //    return [];
-    //  },
-    //  getFormInfo: get
-    //};
-  })
+  });

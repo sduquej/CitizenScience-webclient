@@ -1,0 +1,7 @@
+<div class="input-group">
+  <input ng-file-select ng-model="model[options.key]" type="file">
+  <div class="progress" ng-show="model[options.key][0].progress >= 0">
+    <div class="progress-bar ng-binding" style="width:{{model[options.key][0].progress}}%"
+         ng-bind="model[options.key][0].progress + '%'"></div>
+  </div>
+</div>

@@ -9,7 +9,7 @@
  */
 angular
   .module('webClientApp')
-  .controller('ListController', listController)
+  .controller('ListController', listController);
 
 listController.$inject = ['restAPI','formConfig'];
 
@@ -29,17 +29,16 @@ function listController(restAPI,formConfig) {
       // get the list of the last 10 contributions
       vm.lastTenContributions = vm.contributions.slice(0,10);
     });
-
-    // Get the contributions list
-    function getData(){
-      return restAPI.list()
-        .then(function(data){
-          vm.contributions = data.sort(function(c1, c2){
-            // To get the records in descending order we must invert the sign on the date difference.
-            return -1 * moment(c1.timestamp).diff(moment(c2.timestamp),'seconds');
-          });
-          return vm.contributions;
-        });
-    }
   }
-};
+
+  // Get the contributions list
+  function getData(){
+    return restAPI.list().then(function(data){
+      vm.contributions = data.sort(function(c1, c2){
+        // To get the records in descending order we must invert the sign on the date difference.
+        return -1 * moment(c1.timestamp).diff(moment(c2.timestamp),'seconds');
+      });
+      return vm.contributions;
+    });
+  }
+}

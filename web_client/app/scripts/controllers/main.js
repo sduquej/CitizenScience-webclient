@@ -8,9 +8,8 @@
  * Controller of the webClientApp
  */
 angular.module('webClientApp')
-  .controller('MainController', ['restAPI','formConfig','$scope', function (restAPI,formConfig,$scope) {
-    var keys = [],
-      vm = this;
+  .controller('MainController', ['restAPI','formConfig', function (restAPI,formConfig) {
+    var vm = this;
 
     vm.onSubmit = onSubmit;
     vm.formData = {};
@@ -27,21 +26,21 @@ angular.module('webClientApp')
         form.$setPristine();
         form.$setUntouched();
       }
-    };
+    }
 
     function onSubmit() {
       console.log('form submitted:', vm.formData);
       // Add timestamp to contribution
       vm.formData.timestamp = (new Date()).toJSON();
-      restAPI.form(vm.formData).success(function (data, status, headers, config) {
-        console.log(data);
-        alert("Data collected :D");
+      restAPI.form(vm.formData).success(function (data) {
+        console.log('contribution', data);
+        alert('Thanks for you contribution!');
         resetForm(vm.form);
       }).error(function (error) {
-        alert("Something unexpected happened");
-        console.log("ERROR :\n"+error.error);
+        alert('Something unexpected happened');
+        console.log('ERROR :\n'+error.error);
       });
-    };
+    }
   }])
 ;
 //{

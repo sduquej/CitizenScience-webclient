@@ -7,10 +7,10 @@ restAPI.$inject =['$http', '$upload'];
 
 function restAPI($http, $upload) {
     // local
-    // when testing from an external device, change the url to the intranet ip
-    var base = 'http://localhost:9804';
+    // when testing from an external device, change the host to the intranet ip
+    //var base = 'http://localhost:9804';
     //remote
-    //var base = "https://citscimurestapi.herokuapp.com";
+    var base = 'https://citscimurestapi.herokuapp.com';
 
   return {
       form: submitForm,
@@ -40,7 +40,6 @@ function restAPI($http, $upload) {
   }
 
   function listContributionsComplete(response){
-    console.log(response);
     return response.data;
   }
 

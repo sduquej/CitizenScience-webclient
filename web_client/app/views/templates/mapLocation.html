@@ -1,0 +1,16 @@
+<style>
+  html, body, #map-canvas {
+    height: 200px;
+    margin: 0px;
+    padding: 0px
+  }
+</style>
+<div class="input-group">
+  <input class="form-control" disabled type="text" ng-model="model[options.key]"/>
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#map-canvas">
+      <i class="glyphicon glyphicon-globe"></i>
+    </button>
+  </span>
+  </div>
+<div id="map-canvas" class="collapse in"></div>
