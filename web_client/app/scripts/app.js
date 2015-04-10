@@ -21,7 +21,7 @@ angular
     'angularFileUpload',
     'angularMoment'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,formlyConfigProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -37,4 +37,14 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    // Restrict date fields max value to the current date
+    formlyConfigProvider.templateManipulators.preWrapper.push(function(template, options, scope) {
+      var _to = options.templateOptions,
+        today = (new Date()).toISOString().slice(0,10);
+      if (options.type === 'input' && _to.type === 'date') {
+        _to.max = today;
+      }
+      return template;
+    });
   });

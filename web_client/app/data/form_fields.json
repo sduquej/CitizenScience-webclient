@@ -3,10 +3,33 @@
     "key": "name",
     "type": "input",
     "templateOptions": {
+      "type": "text",
       "required": true,
       "label": "Name of Observer",
       "description": "",
       "placeholder": "Who made the observation?",
+      "options": []
+    }
+  },
+  {
+    "key": "location",
+    "type": "currentLocation",
+    "templateOptions": {
+      "label": "Location",
+      "description": "Get GPS location",
+      "placeholder": "Coordinates",
+      "required": true,
+      "options": []
+    }
+  },
+  {
+    "key": "location",
+    "type": "mapLocation",
+    "templateOptions": {
+      "label": "Map",
+      "description": "Get Map location",
+      "placeholder": "Coordinates",
+      "required": true,
       "options": []
     }
   },
@@ -27,20 +50,20 @@
           "value": "FB"
         },
         {
-          "name": "Flower/Plants",
+          "name": "Flowers/Plants",
           "value": "FP"
         },
         {
-          "name": "Insects/Arachnids",
-          "value": "IA"
-        },
-        {
-          "name": "Environment (Mud, Smell, Other...)",
+          "name": "Environment (Mud, Smell, Temperature, Other...)",
           "value": "E"
         },
         {
           "name": "None of the above",
           "value": "N"
+        },
+        {
+          "name": "Mating Animals",
+          "value": "MA"
         }
       ]
     }

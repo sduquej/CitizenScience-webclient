@@ -8,10 +8,9 @@ restAPI.$inject =['$http', '$upload'];
 function restAPI($http, $upload) {
     // local
     // when testing from an external device, change the url to the intranet ip
-    //var base = 'http://149.157.105.16:9804';
+    var base = 'http://localhost:9804';
     //remote
-    //var base = "https://floating-island-8148.herokuapp.com/";
-    var base = "https://citscimurestapi.herokuapp.com/";
+    //var base = "https://citscimurestapi.herokuapp.com";
 
   return {
       form: submitForm,
@@ -21,18 +20,14 @@ function restAPI($http, $upload) {
   ////////////////////////////////////
 
   function submitForm(form) {
-    // OLD
-    //return $http.post(base + '/api/v1/simpleForm/register', form);
-    //  Multiform attempt
     return $upload.upload({
       url: base + '/api/v1/contributions/register',
       method: 'POST',
       fields: form,
-      //data: form, // data, // Any data needed to be submitted along with the files
       file: form.files || []
     }).progress(function (evt) {
       // Update the uploaded percentage to show on the progress bar
-      if(form.files.length){
+      if(form.files && form.files.length){
         form.files[0].progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
       }
     });
@@ -51,20 +46,7 @@ function restAPI($http, $upload) {
 
   function listContributionsFailed(error){
     console.error('error on list retrieval',error);
-    // If an error occurs give back dummy data
-    return [{
-      email: 'dummy Email',
-      fname: 'dummy Name',
-      lname: 'dummy LastName',
-      age: '25',
-      gender: 'M'
-    },
-      {
-        email: 'dummy@Email.2',
-        fname: 'dummy Name',
-        lname: 'dummy LastName',
-        age: '25',
-        gender: 'F'
-      }];
+    // If an error occurs return no elements
+    return [];
   }
 }
