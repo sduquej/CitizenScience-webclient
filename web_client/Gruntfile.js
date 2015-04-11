@@ -74,7 +74,7 @@ module.exports = function (grunt) {
       heroku: {
           options: {
               force: true,
-              remote: 'git@heroku.com:formly-web-app.git',
+              remote: 'git@heroku.com:maynoothspring.git',
               branch: 'master'
           }
       }
