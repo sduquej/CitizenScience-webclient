@@ -17,6 +17,7 @@
     "templateOptions": {
       "type": "date",
       "label": "Date of Observation",
+      "placeholder": "yyyy-mm-dd",
       "description": "When did you see this?",
       "required": false,
       "options": []
@@ -74,7 +75,6 @@
     "templateOptions": {
       "type": "number",
       "label": "Temperature",
-      "placeholder": "13",
       "description": "Can you guesstimate the temperature?",
       "required": false,
       "options": []

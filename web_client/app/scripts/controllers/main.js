@@ -15,12 +15,14 @@ angular.module('webClientApp')
     vm.formData = {};
     vm.formConfig = formConfig;
     vm.resetForm = resetForm;
+    vm.loading = false;
 
     var clearElement = function(element){
       vm.formData[element] = undefined;
     };
 
     function resetForm(form) {
+
       Object.keys(vm.formData).forEach(clearElement);
       if (form) {
         form.$setPristine();
@@ -29,17 +31,21 @@ angular.module('webClientApp')
     }
 
     function onSubmit() {
+      vm.loading = true;
       console.log('form submitted:', vm.formData);
       // Add timestamp to contribution
       vm.formData.timestamp = (new Date()).toJSON();
-      restAPI.form(vm.formData).success(function (data) {
-        console.log('contribution', data);
-        alert('Thanks for you contribution!');
-        resetForm(vm.form);
-      }).error(function (error) {
-        alert('Something unexpected happened');
-        console.log('ERROR :\n'+error.error);
-      });
+      restAPI.form(vm.formData)
+        .success(function (data) {
+          console.log('contribution', data);
+          alert('Thanks for you contribution!');
+          resetForm(vm.form);
+        }).error(function (error) {
+          alert('Something unexpected happened');
+          console.log('ERROR :\n'+error.error);
+        }).finally(function(){
+          vm.loading = false;
+        });
     }
   }])
 ;

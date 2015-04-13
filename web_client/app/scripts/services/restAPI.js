@@ -9,6 +9,7 @@ function restAPI($http, $upload) {
     // local
     // when testing from an external device, change the host to the intranet ip
     //var base = 'http://localhost:9804';
+    //           'http://10.200.24.224:9804';
     //remote
     var base = 'https://citscimurestapi.herokuapp.com';
 

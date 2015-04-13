@@ -74,7 +74,7 @@ angular
         // Initialize google maps component
         function initialize() {
           var mapOptions = {
-            zoom: 6
+            zoom: 14
           };
 
           map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -101,12 +101,12 @@ angular
               var infowindow = new google.maps.InfoWindow({
                 map: map,
                 position: currentLocation,
-                content: 'Select a location.'
+                content: 'You may change the location.'
               });
 
-              map.setCenter(currentLocation);
+              //map.setCenter(currentLocation);
               // Update the selected position
-              //selectLocation(currentLocation);
+              selectLocation(currentLocation);
             }, function() {
               handleNoGeolocation(true);
             });
@@ -126,14 +126,14 @@ angular
         }
 
         function handleNoGeolocation(errorFlag) {
-          var defaultLocation = new google.maps.LatLng(53.1152766,-8.3114272),
+          var defaultLocation = new google.maps.LatLng(53.382814, -6.594513),
             options = {
               map: map,
               position: defaultLocation
             };
 
           if (errorFlag) {
-            options.content = 'Sorry, your location could not be retrieved';
+            options.content = 'Your current location could not be retrieved. Select one on the map';
           } else {
             options.content = 'Your browser doesn\'t support geolocation';
           }

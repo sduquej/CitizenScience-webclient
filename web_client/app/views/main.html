@@ -6,12 +6,17 @@
   <div class="panel-body">
     <form name="vm.form" ng-submit="vm.onSubmit()">
       <formly-form  model="vm.formData" fields="vm.formConfig.jsonConfig">
+        <div class="spinner" ng-show="vm.loading">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-lg btn-success" ng-disabled="vm.form.$invalid">
+          <button type="submit" class="btn btn-lg btn-success" ng-disabled="vm.form.$invalid || vm.loading">
             <!-- ModifyData_Opt: Modify the label below, used on the submit button -->
             Contribute!
           </button>
-          <button type="button" ng-click="vm.resetForm(vm.form)" class="btn btn-lg btn-danger">
+          <button type="button" ng-click="vm.resetForm(vm.form)" class="btn btn-lg btn-danger" ng-disabled="vm.loading">
             <!-- ModifyData_Opt: Modify the label below, used on the form reset button -->
             Start Over
           </button>
@@ -21,5 +26,6 @@
   </div>
 </div>
 
-<h2>Current Data Values</h2>
+<hr/>
+<h3>Current Data Values</h3>
 <pre>{{vm.formData | json}}</pre>

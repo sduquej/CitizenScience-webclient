@@ -52,10 +52,10 @@
             <a class="navbar-brand" href="#/"><span class="glyphicon glyphicon-tree-deciduous"></span> Spring Maynooth</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="NavbarController">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#/">Contribute</a></li>
-              <li><a ng-href="#/list">Stats</a></li>
+              <li ng-class="{ active: isActive('/')}"><a href="#/">Contribute</a></li>
+              <li ng-class="{ active: isActive('/list')}"><a ng-href="#/list">Stats</a></li>
             </ul>
           </div>
         </div>
@@ -109,7 +109,7 @@
     <script src="scripts/services/jsonConfig.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/list.js"></script>
-    <script src="scripts/controllers/upload.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
     <!-- endbuild -->
 </body>
 </html>
