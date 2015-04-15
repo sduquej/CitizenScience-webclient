@@ -1,0 +1,52 @@
+<h1><code ng:non-bindable="">restAPI</code>
+<div><span class="hint">service in module <code ng:non-bindable="">webClientApp</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="webclientapp-service-page webclientapp-service-restapi-page"><p>This service handles all the interaction with the backend, RESTful, server.
+It exposes two methods, one for submitting and one for retrieving data; they both
+hit the endpoint configured  <a href="#/api/webClientApp.service:restAPI#properties_base">here</a>.</p>
+
+<p>It uses Angular&#39;s <tt>$http</tt> service and the open source
+<a href="https://github.com/danialfarid/ng-file-upload">ng-file-upload directive</a>.</p></div></div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_base">base</h3>
+<div class="base"><div class="base-page"><p>String with the base url of the backend REST server. If using a local instance it is okay to use
+<code>localhost</code>, however it is recommended to use the local IP address to test from external
+devices (that are on the same network).</p>
+</div><h4 id="properties_base_example">Example</h4>
+<div class="example"><div class="base-page"><p>For a local backend server (deployed on the same machine)</p>
+<pre><code class="lang-javascript">// local instance on port 9804
+var base = &#39;http://localhost:9804&#39;;
+</code></pre>
+<p>Using the intranet IP</p>
+<pre><code class="lang-javascript">// suggested use, with the intranet IP
+var base = &#39;http://192.168.1.35:9804&#39;;
+</code></pre>
+<p>Remote REST server</p>
+<pre><code class="lang-javascript">// url with hostname
+var base = &#39;https://your.domain.com&#39;;
+</code></pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="properties_list">list</h3>
+<div class="list"><div class="list-page"><p><p>This method hits the <code>/api/v1/contributions/list</code> endpoint of
+the <a href="#/api/webClientApp.service:restAPI#properties_base">base url</a> with the <code>GET</code>
+method. If a file was submitted, the progress of the upload is updated on the
+<a href="#/api/webClientApp.controller:MainController#properties_formdata">formData</a> object.</p>
+</div><h5 id="properties_list_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="list-page"><p>Data returned from the backend or an empty array if there was an error.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="properties_post">post</h3>
+<div class="post"><div class="post-page"><p><p>This method hits the <code>/api/v1/contributions/register</code> endpoint of
+the <a href="#/api/webClientApp.service:restAPI#properties_base">base url</a> with the <code>POST</code>
+method. If a file was submitted, the progress of the upload is updated on the
+<a href="#/api/webClientApp.controller:MainController#properties_formdata">formData</a> object.</p>
+</div><h5 id="properties_post_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-httppromise">HttpPromise</a></td><td><div class="post-page"><p>A promise with the result of the upload</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

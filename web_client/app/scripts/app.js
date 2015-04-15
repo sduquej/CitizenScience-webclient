@@ -6,7 +6,16 @@
  * @description
  * # webClientApp
  *
- * Main module of the application.
+ * <p>Main module of the provided sample application</p>
+ * <p>Routing is configured for the {@link webClientApp.controller:MainController Main}
+ * and {@link webClientApp.controller:ListController List} views.</p>
+ *
+ * <p>Formly configuration is done, registering the custom fields: <tt>fileField</tt>,
+ * <tt>currentLocation</tt> and <tt>mapLocation</tt>. This is done calling the
+ * {@link http://docs.angular-formly.com/v5.2.1/docs/custom-templates#creating-a-custom-template
+  * formlyConfigProvider.setType()} method. In addition, a
+ * {@link http://docs.angular-formly.com/v5.2.1/docs/formlyconfig#templatemanipulators
+ * templateManipulator} is used to set the <tt>max</tt> property of inputs of type date to the current date.</p>
  */
 angular
   .module('webClientApp', [
@@ -37,7 +46,6 @@ angular
     var commonWrappers = ['bootstrapLabel', 'bootstrapHasError'];
 
     // Register custom types with formly
-
     // File upload
     formlyConfigProvider.setType({
       name: 'fileField',

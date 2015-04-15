@@ -8,6 +8,8 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+  // Load ngdocs for html documentation generation
+  grunt.loadNpmTasks('grunt-ngdocs');
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -408,6 +410,15 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    ngdocs: {
+      options: {
+        dest: 'docs',
+        html5Mode: false,
+        startPage: '/api/webClientApp'
+      },
+      all: ['app/scripts/**/*.js']
     }
   });
 
@@ -441,6 +452,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'ngdocs',
     'clean:dist',
     'wiredep',
     'useminPrepare',
@@ -462,4 +474,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('docs',['ngdocs']);
 };

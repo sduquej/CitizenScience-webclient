@@ -1,11 +1,17 @@
 'use strict';
 
 /**
- * @ngdoc function
- * @name webClientApp.controller:StatsController
+ * @ngdoc controller
+ * @name webClientApp.controller:ListController
  * @description
- * # StatsController
- * Statistics Controller
+ * ## Controller for the list/statistics view.
+ * It uses the {@link webClientApp.service:formConfig formConfig} service to
+ * obtain the fields that make each contribution. The
+ * {@link webClientApp.service:restAPI restAPI service} is used to fetch the
+ * contributions data from the backend.
+ *
+ * This controller manipulates the data and exposes what is intended to be
+ * shown on the List view.
  */
 angular
   .module('webClientApp')
@@ -15,7 +21,43 @@ listController.$inject = ['restAPI','formConfig'];
 
 function listController(restAPI,formConfig) {
   var vm = this;
+  /**
+   * @ngdoc property
+   * @name formConfig
+   * @propertyOf webClientApp.controller:ListController
+   * @description
+   * {@link webClientApp.service:formConfig#properties_formParameters formParameters}
+   * object, it's injected from the
+   * {@link webClientApp.service:formConfig formConfig} service.
+   */
   vm.formConfig = formConfig;
+
+  /**
+   * @ngdoc property
+   * @name contributions
+   * @propertyOf webClientApp.controller:ListController
+   * @description
+   * Array of contributions in descending order by date of contribution.
+   */
+  vm.contributions = [];
+
+  /**
+   * @ngdoc property
+   * @name contributions
+   * @propertyOf webClientApp.controller:ListController
+   * @description
+   * Array of contributions in the last month.
+   */
+  vm.lastContributions = [];
+
+  /**
+   * @ngdoc property
+   * @name contributions
+   * @propertyOf webClientApp.controller:ListController
+   * @description
+   * Array of the last ten contributions.
+   */
+  vm.lastTenContributions = [];
 
   loadData();
 

@@ -1,0 +1,52 @@
+<h1><code ng:non-bindable="">MainController</code>
+<div><span class="hint">controller in module <code ng:non-bindable="">webClientApp</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="webclientapp-controller-page webclientapp-controller-maincontroller-page"><p>Controller for the Main view: the contribution form.
+It refers the <a href="#/api/webClientApp.service:formConfig">formConfig</a> service to obtain the fields that make the form.
+Form submission is deferred to the restAPI service that communicates with
+the backend.</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_clearelement">clearElement(element)</h3>
+<div class="clearelement"><div class="clearelement-page"><p>Sets the value of the given element to undefined. The element must
+exist in the <a href="#/api/webClientApp.controller:MainController#properties_formdata">formData</a> object</p>
+</div><h5 id="methods_clearelement_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>element</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="clearelement-page"><p>The element whose value will be set to <tt>undefined</tt>.</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_onsubmit">onSubmit()</h3>
+<div class="onsubmit"><div class="onsubmit-page"><p>Handles the form submission, doing the following:</p>
+<ol>
+  <li> Toggles the <tt>loading</tt> flag, used to show a progress indicator and disable the button inputs</li>
+  <li> Adds a timestamp with the current time to the <a href="#/api/webClientApp.controller:MainController#properties_formdata">formData</a> object</li>
+  <li> Invokes the <a href="#/api/webClientApp.service:restAPI#methods_post">post()</a> method of the <a href="#/api/webClientApp.service:restAPI">restAPI</a> service sending the <a href="#/api/webClientApp.controller:MainController#properties_formdata">formData</a> object</li>
+  <li> Notifies the user of the outcome of the submission and, if successful, invokes <a href="#/api/webClientApp.controller:MainController#methods_resetform">resetForm()</a> to clean the form</li>
+  <li> Toggles back the <tt>loading</tt> flag, no longer showing the progress indicator and enabling the button inputs</li>
+</ol></div></div>
+</li>
+<li><h3 id="methods_resetform">resetForm(form)</h3>
+<div class="resetform"><div class="resetform-page"><p>Calls <a href="#/api/webClientApp.controller:MainController#methods_clearelement">clearElement()</a>
+on every element in the form and invokes the <tt>$setPristine()</tt>
+and <tt>$setUntouched()</tt> functions in the form object.</p>
+</div><h5 id="methods_resetform_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>form</td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="resetform-page"><p>The form object that is to be reset</p>
+</div></td></tr></tbody></table></div>
+</li>
+</ul>
+</div>
+<div class="member property"><h2 id="properties">Properties</h2>
+<ul class="properties"><li><h3 id="properties_formconfig">formConfig</h3>
+<div class="formconfig"><div class="formconfig-page"><p><a href="#/api/webClientApp.service:formConfig#properties_formparameters">formParameters</a>
+object, it&#39;s injected from the
+<a href="#/api/webClientApp.service:formConfig">formConfig</a> service.</p>
+</div></div>
+</li>
+<li><h3 id="properties_formdata">formData</h3>
+<div class="formdata"><div class="formdata-page"><p>Object that contains data from every input that has been used, as a property with
+the corresponding <code>$modelValue</code>.</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>
