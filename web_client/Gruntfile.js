@@ -415,6 +415,7 @@ module.exports = function (grunt) {
     ngdocs: {
       options: {
         dest: 'docs',
+        image: "app/favicon-194x194.png",
         html5Mode: false,
         startPage: '/api/webClientApp'
       },

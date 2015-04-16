@@ -94,11 +94,10 @@ angular.module('webClientApp')
       vm.loading = true;
       // Add timestamp to contribution
       vm.formData.timestamp = (new Date()).toJSON();
-      restAPI.post(vm.formData)
-        .success(function (data) {
+      restAPI.post(vm.formData).then(function (data) {
           alert('Thanks for you contribution!');
           resetForm(vm.form);
-        }).error(function (error) {
+        }, function (error) {
           alert('Something unexpected happened');
           console.error('ERROR :\n'+JSON.stringify(error));
         }).finally(function(){
