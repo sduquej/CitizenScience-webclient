@@ -1,0 +1,48 @@
+[
+  {
+    "key": "type",
+    "type": "radio",
+    "templateOptions": {
+      "label": "What?",
+      "description": "Which kind of animal did you see?",
+      "required": false,
+      "options": [
+        {
+          "name": "Mammal",
+          "value": "M"
+        },
+        {
+          "name": "Reptile",
+          "value": "R"
+        },
+        {
+          "name": "Other",
+          "value": "O"
+        }
+      ]
+    }
+  },
+  {
+    "key": "quantity",
+    "type": "input",
+    "templateOptions": {
+      "type": "number",
+      "label": "Quantity",
+      "placeholder": "",
+      "description": "How many did you see?",
+      "required": false,
+      "options": []
+    }
+  },
+  {
+    "key": "location",
+    "type": "mapLocation",
+    "templateOptions": {
+      "label": "Where?",
+      "description": "Select location",
+      "placeholder": "",
+      "required": false,
+      "options": []
+    }
+  }
+]

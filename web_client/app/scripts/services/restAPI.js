@@ -4,7 +4,7 @@
  * @ngdoc service
  * @name webClientApp.service:restAPI
  * @description
- * <p>This service handles all the interaction with the backend, RESTful, server.
+ * <p>This service handles all the interaction with the back-end, REST application server.
  * It exposes two methods, one for submitting and one for retrieving data; they both
  * hit the endpoint configured  {@link webClientApp.service:restAPI#properties_base here}.</p>
  *
