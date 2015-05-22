@@ -7,7 +7,8 @@
 <p>Routing is configured for the <a href="#/api/webClientApp.controller:MainController">Main</a>
 and <a href="#/api/webClientApp.controller:ListController">List</a> views.</p>
 
-<p>Formly configuration is done, registering the custom fields: <tt>fileField</tt>,
+<p>Formly configuration is initially done registering the custom fields: <tt>fileField</tt>,
 <tt>currentLocation</tt> and <tt>mapLocation</tt>. This is done calling the
 <a href="http://docs.angular-formly.com/v5.2.1/docs/custom-templates#creating-a-custom-template">formlyConfigProvider.setType()</a> method. In addition, a
-<a href="http://docs.angular-formly.com/v5.2.1/docs/formlyconfig#templatemanipulators">templateManipulator</a> is used to set the <tt>max</tt> property of inputs of type date to the current date.</p></div></div>
+<a href="http://docs.angular-formly.com/v5.2.1/docs/formlyconfig#templatemanipulators">templateManipulator</a> is used to set the <tt>max</tt> property of inputs of type date to the current date. If
+it not intended to impose this upper limit, then comment or remove the code that adds the <tt>max</tt> property.</p></div></div>

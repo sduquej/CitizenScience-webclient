@@ -10,7 +10,7 @@ NG_DOCS={
       "type": "overview",
       "moduleName": "webClientApp",
       "shortDescription": "webClientApp",
-      "keywords": "addition angular-formly api application calling configuration configured controller creating-a-custom-template current custom fields formlyconfigprovider http inputs list main method module overview property provided registering sample set settype templatemanipulator templatemanipulators type views webclientapp"
+      "keywords": "addition adds angular-formly api application calling code comment configuration configured controller creating-a-custom-template current custom fields formlyconfigprovider http impose initially inputs intended limit list main method module overview property provided registering remove sample set settype templatemanipulator templatemanipulators type upper views webclientapp"
     },
     {
       "section": "api",
@@ -54,8 +54,8 @@ NG_DOCS={
       "shortName": "restAPI",
       "type": "service",
       "moduleName": "webClientApp",
-      "shortDescription": "This service handles all the interaction with the backend, RESTful, server.",
-      "keywords": "address angular api array backend base configured controller data devices directive domain empty endpoint error exposes external fields file form formdata handles hit hits hostname http https instance interaction intranet ip javascript list local localhost machine method methods network ng-file-upload object open port post posted progress promise properties properties_base properties_formdata property recommended remote rest restful result retrieving returned server service source string submitted submitting suggested test updated upload url var webclientapp"
+      "shortDescription": "This service handles all the interaction with the back-end, REST application server.",
+      "keywords": "address angular api application array back-end backend base configured controller data devices directive domain empty endpoint error exposes external fields file form formdata handles hit hits hostname http https instance interaction intranet ip javascript list local localhost machine method methods network ng-file-upload object open port post posted progress promise properties properties_base properties_formdata property recommended remote rest result retrieving returned server service source string submitted submitting suggested test updated upload url var webclientapp"
     }
   ],
   "apis": {
